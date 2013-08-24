@@ -1,3 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/guard-preek.png)](http://badge.fury.io/rb/guard-preek)
+[![Build Status](https://travis-ci.org/joenas/guard-preek.png)](https://travis-ci.org/joenas/guard-preek)
+[![Dependency Status](https://gemnasium.com/joenas/guard-preek.png)](https://gemnasium.com/joenas/guard-preek)
+
 # Guard::Preek
 
 Do your refactoring with Guard and Preek printing the smells for you. In color!
