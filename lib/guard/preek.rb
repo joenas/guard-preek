@@ -13,6 +13,7 @@ module Guard
     def run_all
       dir = options[:run_all_dir]
       raise_dir_missing unless dir
+      UI.info %(Running Preek on '#{dir}'. Wait for it...!)
       Runner.new(dir).perform
     end
 
