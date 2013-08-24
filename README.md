@@ -1,24 +1,41 @@
 # Guard::Preek
 
-TODO: Write a gem description
+Do your refactoring with Guard and Preek printing the smells for you. In color!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'guard-preek'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install guard-preek
+    
+or
+
+    # Add to Gemfile
+    gem 'guard/preek'
+
+or install it yourself
+
+    $ git clone git@github.com:joenas/guard-preek.git
+    $ cd guard-preek
+    $ rake install
+    
 
 ## Usage
 
-TODO: Write usage instructions here
+To generate template: 
+ 
+    $ guard init preek
+
+### Examples
+```ruby
+guard :preek, run_all_dir: 'lib' do
+	watch(/lib\/(.*).rb/)
+end
+```
+
+### Available options
+
+``` ruby
+run_all_dir: 'lib'           # Enter in guard will run Preek on 'lib'
+```
 
 ## Contributing
 
