@@ -19,12 +19,12 @@ module Guard
   private
     def raise_dir_missing
       UI.error <<-EOF
-        Please specify a dir for run all in your Guardfile!
-        Example:
+Please specify a dir for run all in your Guardfile!
+Example:
 
-        guard :preek, run_all_dir: 'lib' do
-          watch(/lib\/(.*).rb/)
-        end
+guard :preek, run_all_dir: 'lib' do
+  watch(/lib\/(.*).rb/)
+end
       EOF
       throw :task_has_failed
     end
