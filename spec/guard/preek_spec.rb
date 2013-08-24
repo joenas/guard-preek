@@ -27,8 +27,8 @@ describe Guard::Preek do
 
     context 'with no options' do
       Then{
-      Guard::UI.should_receive(:error).with(/Guardfile/)
-       expect { guard.run_all }.to throw_symbol :task_has_failed
+        Guard::UI.should_receive(:error).with(/Guardfile/)
+        expect { guard.run_all }.to throw_symbol :task_has_failed
       }
     end
   end

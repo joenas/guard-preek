@@ -28,6 +28,12 @@ end
       EOF
       throw :task_has_failed
     end
+
+    def raise_dir_missing
+      UI.error "Please specify a dir for run all in your Guardfile!\nExample:\n\tguard :preek, run_all_dir: 'lib' do \n\t  watch(/lib\/(.*).rb/) \n\tend"
+      throw :task_has_failed
+    end
+
   end
 end
 
