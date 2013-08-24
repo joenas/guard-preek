@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - jruby-19mode
+  - 2.0.0
+branches:
+  only:
+    - master
+script: rspec spec
