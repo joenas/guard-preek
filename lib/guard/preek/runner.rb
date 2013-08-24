@@ -15,8 +15,13 @@ module Guard
 
       def perform
         sources = Reek::Source::SourceLocator.new(@files).all_sources
-        smelly_files = ::Preek::SmellCollector.new(sources, []).smelly_files
+        smelly_files = ::Preek::SmellCollector.new(sources, excludes).smelly_files
         ::Preek::SmellReporter.new(smelly_files).print_smells
+      end
+
+    private
+      def excludes
+        %w(IrresponsibleModule)
       end
     end
   end
