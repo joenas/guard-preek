@@ -10,7 +10,7 @@ module Guard
   class Preek
     class Runner
       def initialize(files)
-        @files = files
+        @files = Array(files)
       end
 
       def perform
