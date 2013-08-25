@@ -1,5 +1,4 @@
-require 'preek/smell_collector'
-require 'preek/smell_reporter'
+require 'preek'
 
 module Guard
   class Preek
@@ -9,8 +8,7 @@ module Guard
       end
 
       def perform
-        smelly_files = ::Preek::SmellCollector.new(@files, excludes).smelly_files
-        ::Preek::SmellReporter.new(smelly_files).print_smells
+        ::Preek::Smell(@files, excludes)
       end
 
     private
