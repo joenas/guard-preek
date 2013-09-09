@@ -10,7 +10,7 @@ Do your refactoring with [Guard](https://github.com/guard/guard) and [Preek](htt
 ## Installation
 
     $ gem install guard-preek
-    
+
 or
 
     # Add to Gemfile
@@ -21,12 +21,12 @@ or install it yourself
     $ git clone git@github.com:joenas/guard-preek.git
     $ cd guard-preek
     $ rake install
-    
+
 
 ## Usage
 
-To generate template: 
- 
+To generate template:
+
     $ guard init preek
 
 ### Examples
@@ -40,6 +40,7 @@ end
 
 ``` ruby
 run_all_dir: 'lib'           # Enter in guard will run Preek on 'lib'
+report: :verbose             # Use Preek::VerboseReport, default is QuietReport
 ```
 
 ## Contributing

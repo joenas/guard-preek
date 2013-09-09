@@ -18,8 +18,11 @@ module Guard
       end
 
       def reporter
-        return ::Preek::VerboseReport if @report_type == :verbose
-        ::Preek::QuietReport
+        if @report_type == :verbose
+          ::Preek::VerboseReport
+        else
+          ::Preek::QuietReport
+        end
       end
     end
   end
