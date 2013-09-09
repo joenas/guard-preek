@@ -2,6 +2,6 @@
 # More info at https://github.com/guard/guard#readme
 
 guard :preek, run_all_dir: 'lib' do
-	watch(/lib\/(.*).rb/)
+	watch(/^lib\/(.*).rb/)
 end
 
