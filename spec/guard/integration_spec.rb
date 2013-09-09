@@ -10,20 +10,48 @@ describe Guard::Preek do
     Given(:paths){ ["spec/test_files/#{file}.rb"] }
     When(:output) { capture(:stdout) { guard.run_on_changes(paths) } }
 
-    context 'with a smell' do
-      Given(:file) {'nil_check'}
-      Then { output.should match(/NilCheck/) }
+    context 'with no options' do
+      context 'with a smell' do
+        Given(:file) {'nil_check'}
+        Then { output.should match(/NilCheck/) }
+        Then { output.should include(paths[0])}
+      end
+
+      context 'with Irresponsible' do
+        Given(:file) {'irresponsible'}
+        Then { output.should match(/No smells detected/) }
+        Then { output.should_not include(paths[0])}
+      end
+
+      context 'without smell' do
+        Given(:file) {'non_smelly'}
+        Then { output.should match(/No smells detected/) }
+        Then { output.should_not include(paths[0])}
+      end
     end
 
-    context 'with Irresponsible' do
-      Given(:file) {'irresponsible'}
-      Then { output.should match(/No smells detected/) }
+    context 'with option "report: :verbose"' do
+      Given(:options){ {report: :verbose} }
+
+      context 'with a smell' do
+        Given(:file) {'nil_check'}
+        Then { output.should match(/NilCheck/) }
+        Then { output.should include(paths[0])}
+      end
+
+      context 'with Irresponsible' do
+        Given(:file) {'irresponsible'}
+        Then { output.should match(/No smells detected/) }
+        Then { output.should include(paths[0])}
+      end
+
+      context 'without smell' do
+        Given(:file) {'non_smelly'}
+        Then { output.should match(/No smells detected/) }
+        Then { output.should include(paths[0])}
+      end
     end
 
-    context 'without smell' do
-      Given(:file) {'non_smelly'}
-      Then { output.should match(/No smells detected/) }
-    end
   end
 
   context '#run_all' do

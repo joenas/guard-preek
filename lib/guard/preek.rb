@@ -7,14 +7,14 @@ module Guard
     autoload :Runner, 'guard/preek/runner'
 
     def run_on_changes(paths)
-      Runner.new(paths).perform
+      Runner.new(paths, options[:report]).perform
     end
 
     def run_all
       dir = options[:run_all_dir]
       raise_dir_missing unless dir
       UI.info %(Running Preek on '#{dir}'. Wait for it...!)
-      Runner.new(dir).perform
+      Runner.new(dir, options[:report]).perform
     end
 
   private
