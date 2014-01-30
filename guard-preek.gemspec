@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Guard::PreekVersion::VERSION
   spec.authors       = ["Jon Neverland"]
   spec.email         = ["jonwestin@gmail.com"]
-  spec.description   = %q{Simple refactoring Guard, pretty prints Reek smells}
-  spec.summary       = %q{Simple refactoring Guard, pretty prints Reek smells}
+  spec.description   = %q{Guard for refactoring, view code smells in color using Preek}
+  spec.summary       = %q{Guard for refactoring, view code smells in color using Preek}
   spec.homepage      = ""
   spec.license       = "MIT"
 
