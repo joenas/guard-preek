@@ -14,7 +14,7 @@ Do your refactoring with [Guard](https://github.com/guard/guard) and [Preek](htt
 or
 
     # Add to Gemfile
-    gem 'guard/preek'
+    gem 'guard-preek'
 
 or install it yourself
 
