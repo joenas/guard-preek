@@ -1,9 +1,9 @@
 require "guard/preek/version"
 require 'guard'
-require 'guard/guard'
+require 'guard/plugin'
 
 module Guard
-  class Preek < Guard
+  class Preek < Guard::Plugin
     autoload :Runner, 'guard/preek/runner'
 
     def run_on_changes(paths)

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Guard::Preek do
   include CaptureHelper
 
-  Given(:guard){ Guard::Preek.new([], options) }
+  Given(:guard){ Guard::Preek.new(options) }
   Given(:options){ Hash.new }
 
   context '#run_on_changes' do
