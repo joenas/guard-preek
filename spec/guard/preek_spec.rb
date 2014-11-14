@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Guard::Preek do
 
-  Given(:guard){ Guard::Preek.new([], options) }
+  Given(:guard){ Guard::Preek.new(options) }
   Given(:options){ Hash.new }
   Given(:paths){ ['some_file.rb'] }
   Given(:runner){ double('runner', perform: true) }
